@@ -1,0 +1,82 @@
+""Дана строка 'AaBbCcDd'. Используя срезы с шагом получите две строки: только с заглавными и только со
+строчными буквами. Выведите их на экран.""
+
+Python
+
+string = 'AaBbCcDd'
+
+# Срез для получения только заглавных букв (начиная с индекса 0, каждый второй символ)
+uppercase = string[0::2]
+
+# Срез для получения только строчных букв (начиная с индекса 1, каждый второй символ)
+lowercase = string[1::2]
+
+print("Заглавные буквы:", uppercase)
+print("Строчные буквы:", lowercase)
+
+
+C++
+
+
+
+#include <iostream>
+#include <string>
+
+int main() {
+  std::string string = "AaBbCcDd";
+  std::string uppercase = "";
+  std::string lowercase = "";
+
+  // Проходим по строке с шагом 2
+  for (int i = 0; i < string.length(); i += 2) {
+    uppercase += string[i];  // Добавляем заглавную букву
+    lowercase += string[i + 1]; // Добавляем строчную букву
+  }
+
+  std::cout << "Заглавные буквы: " << uppercase << std::endl;
+  std::cout << "Строчные буквы: " << lowercase << std::endl;
+
+  return 0;
+}
+
+#Комментарии:
+
+*   #include <iostream> - Подключает библиотеку для ввода/вывода.
+*   #include <string> - Подключает библиотеку для работы со строками.
+*   std::string - Тип данных для строк в C++.
+*   string.length() - Возвращает длину строки.
+*   for (int i = 0; i < string.length(); i += 2) - Цикл, который идет по строке с шагом 2.
+*   std::cout - Выводит текст на экран.
+
+
+java
+
+
+public class Main {
+  public static void main(String[] args) {
+    String string = "AaBbCcDd";
+    String uppercase = "";
+    String lowercase = "";
+
+    // Проходим по строке с шагом 2
+    for (int i = 0; i < string.length(); i += 2) {
+      uppercase += string.charAt(i); // Добавляем заглавную букву
+      lowercase += string.charAt(i + 1); // Добавляем строчную букву
+    }
+
+    System.out.println("Заглавные буквы: " + uppercase);
+    System.out.println("Строчные буквы: " + lowercase);
+  }
+}
+
+
+#Комментарии:
+
+*   public class Main - Объявление класса. В Java все должно быть внутри класса.
+*   public static void main(String[] args) - Главный метод, с которого начинается выполнение программы.
+*   String - Тип данных для строк в Java.
+*   string.length() - Возвращает длину строки.
+*   string.charAt(i) - Возвращает символ по индекс
+
+
+
