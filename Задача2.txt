@@ -1,0 +1,131 @@
+#Дан список ['a', '1', 'b', '2', 'c', '3']. Разбейте его на два списка: только с буквами и только с числами. Сам список затем удалите, а новые списки выведите на экран, каждый на отдельной строке.#
+
+
+original_list = ['a', '1', 'b', '2', 'c', '3']
+
+letters = []
+numbers = []
+
+for item in original_list:
+    if item.isalpha():  # Проверяем, является ли элемент буквой
+        letters.append(item)
+    elif item.isdigit():  # Проверяем, является ли элемент числом
+        numbers.append(item)
+
+del original_list  # Удаляем исходный список
+
+print("Буквы:", letters)
+print("Числа:", numbers)
+
+#Комментарии:•  original_list.isalpha() - Проверяет, состоит ли строка только из букв. Возвращает True, если да, и False в противном случае.#
+#•  original_list.isdigit() - Проверяет, состоит ли строка только из цифр. Возвращает True, если да, и False в противном случае.#
+#del original_list - Удаляет список из памяти.#
+#print() - Выводит текст на экран.#
+
+C++
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+int main() {
+    std::vector<std::string> originalList = {"a", "1", "b", "2", "c", "3"};
+    std::vector<std::string> letters;
+    std::vector<std::string> numbers;
+
+    for (const std::string& item : originalList) {
+        if (isalpha(item[0])) {  // Проверяем, является ли первый символ буквой
+            letters.push_back(item);
+        } else if (isdigit(item[0])) { // Проверяем, является ли первый символ цифрой
+            numbers.push_back(item);
+        }
+    }
+
+    originalList.clear(); // Удаляем исходный список
+
+    std::cout << "Буквы: ";
+    for (const std::string& letter : letters) {
+        std::cout << letter << " ";
+    }
+    std::cout << std::endl;
+
+    std::cout << "Числа: ";
+    for (const std::string& number : numbers) {
+        std::cout << number << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
+
+Комментарии:
+#include <iostream>, #include <vector>, #include <string> - Подключаем необходимые библиотеки.
+std::vector<std::string> - Создаем вектор (динамический массив). isalpha(item[0]) - Проверяет, является ли первый символ строки item буквой. (функция из библиотеки cctype)
+isdigit(item[0]) - Проверяет, является ли первый символ строки item цифрой. (функция из библиотеки cctype).letters.push_back(item) - Добавляет элемент в конец вектора letters.originalList.clear() - Очищает вектор originalList (эквивалент удалению списка).#
+
+
+JAVA
+
+
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        List<String> originalList = new ArrayList<>();
+        originalList.add("a");
+        originalList.add("1");
+        originalList.add("b");
+        originalList.add("2");
+        originalList.add("c");
+        originalList.add("3");
+
+        List<String> letters = new ArrayList<>();
+        List<String> numbers = new ArrayList<>();
+
+        for (String item : originalList) {
+            if (Character.isLetter(item.charAt(0))) { // Проверяем, является ли первый символ буквой
+                letters.add(item);
+            } else if (Character.isDigit(item.charAt(0))) { // Проверяем, является ли первый символ цифрой
+                numbers.add(item);
+            }
+        }
+
+        originalList.clear(); // Удаляем исходный список
+
+        System.out.println("Буквы: " + letters);
+        System.out.println("Числа: " + numbers);
+    }
+}
+
+
+
+Комментарии:
+
+#import java.util.ArrayList; и import java.util.List; - Импортируем необходимые классы для работы со списками.List<String> - Создаем список строк.Character.isLetter(item.charAt(0)) - Проверяет, является ли первый символ строки item буквой.Character.isDigit(item.charAt(0)) - Проверяет, является ли первый символ строки item цифрой.#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
